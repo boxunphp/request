@@ -29,6 +29,7 @@ class Request
     private $uri;
     private $requestUri;
     private $suffix = null;
+    private $requestId;
 
     private $method;
     private $params = null;
@@ -100,6 +101,14 @@ class Request
         $this->suffix = strstr($requestUri, '.');
         $this->suffix = $this->suffix === false ? '' : $this->suffix;
         return $this->suffix;
+    }
+
+    public function requestId()
+    {
+        if (!$this->requestId) {
+            $this->requestId = md5(uniqid(gethostname(), true));
+        }
+        return $this->requestId;
     }
 
     public function setParams($params)
