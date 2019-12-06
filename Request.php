@@ -20,6 +20,8 @@ class Request
 {
     use InstanceTrait;
 
+    private $serverScheme;
+    private $serverHost;
     private $serverName;
     private $serverPort;
     private $serverIp;
@@ -33,6 +35,7 @@ class Request
     private $cliParams = null;
 
     private $clientIp;
+    private $clientPort;
     private $userAgent;
     private $referer;
 
@@ -209,6 +212,24 @@ class Request
         return $this->method;
     }
 
+    public function serverScheme()
+    {
+        if ($this->serverScheme) {
+            return $this->serverScheme;
+        }
+        $this->serverScheme = isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) ? 'https' : 'http';
+        return $this->serverScheme;
+    }
+
+    public function serverHost()
+    {
+        if ($this->serverHost) {
+            return $this->serverHost;
+        }
+        $this->serverHost = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+        return $this->serverHost;
+    }
+
     public function serverName()
     {
         if ($this->serverName) {
@@ -262,6 +283,15 @@ class Request
         }
         $this->clientIp = $ip;
         return $this->clientIp;
+    }
+
+    public function clientPort()
+    {
+        if ($this->clientPort) {
+            return $this->clientPort;
+        }
+        $this->clientPort = isset($_SERVER['REMOTE_PORT']) ? $_SERVER['REMOTE_PORT'] : '';
+        return $this->clientPort;
     }
 
     public function userAgent()
