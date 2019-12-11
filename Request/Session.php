@@ -6,7 +6,7 @@
  * Time: 1:48 PM
  */
 
-namespace All\Request;
+namespace All\Request\Request;
 
 use All\Exception\WarnException;
 

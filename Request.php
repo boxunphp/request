@@ -9,6 +9,10 @@
 namespace All\Request;
 
 use Ali\InstanceTrait;
+use All\Request\Request\Cookie;
+use All\Request\Request\File;
+use All\Request\Request\Header;
+use All\Request\Request\Session;
 
 /**
  * 请求类
