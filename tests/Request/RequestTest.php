@@ -6,11 +6,14 @@
  * Time: 1:59 PM
  */
 
-namespace RequestTest;
+namespace Tests\Request;
 
 use PHPUnit\Framework\TestCase;
 
 class RequestTest extends TestCase
 {
-
+    public function testA()
+    {
+        $this->assertTrue(true);
+    }
 }
