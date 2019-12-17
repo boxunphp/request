@@ -4,24 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5fb9159ba589a978227a6a65d7952188",
+    "content-hash": "4acf911a34ad17b317fa706fee033ec8",
     "packages": [
         {
             "name": "boxunphp/php-exception",
-            "version": "v1.2",
+            "version": "v1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/boxunphp/php-exception.git",
-                "reference": "dbc0d1cc4a6fedcc4f5d30cab0e3b4a6d997766f"
+                "reference": "db02f35de3b65a03761869fa64057a640d986536"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boxunphp/php-exception/zipball/dbc0d1cc4a6fedcc4f5d30cab0e3b4a6d997766f",
-                "reference": "dbc0d1cc4a6fedcc4f5d30cab0e3b4a6d997766f",
+                "url": "https://api.github.com/repos/boxunphp/php-exception/zipball/db02f35de3b65a03761869fa64057a640d986536",
+                "reference": "db02f35de3b65a03761869fa64057a640d986536",
                 "shasum": ""
             },
             "require": {
-                "boxunphp/php-utils": "^v1.1.0"
+                "boxunphp/php-utils": "v1.*",
+                "php": "^7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "7.*"
@@ -29,7 +30,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "All\\Exception\\": ""
+                    "All\\Exception\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -43,20 +44,61 @@
                 }
             ],
             "description": "PHP Exception",
-            "time": "2019-12-13T03:17:35+00:00"
+            "time": "2019-12-16T11:34:17+00:00"
         },
         {
-            "name": "boxunphp/php-utils",
-            "version": "v1.2",
+            "name": "boxunphp/php-router",
+            "version": "v1.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/boxunphp/php-utils.git",
-                "reference": "c9f4b54c67c5039e6ccf7a9ef5cb72cc9709ed1a"
+                "url": "https://github.com/boxunphp/php-router.git",
+                "reference": "3fd25e7dd49eb664cff7496c73d2566822035611"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boxunphp/php-utils/zipball/c9f4b54c67c5039e6ccf7a9ef5cb72cc9709ed1a",
-                "reference": "c9f4b54c67c5039e6ccf7a9ef5cb72cc9709ed1a",
+                "url": "https://api.github.com/repos/boxunphp/php-router/zipball/3fd25e7dd49eb664cff7496c73d2566822035611",
+                "reference": "3fd25e7dd49eb664cff7496c73d2566822035611",
+                "shasum": ""
+            },
+            "require": {
+                "boxunphp/php-exception": "v1.*",
+                "boxunsoft/php-instance": "v1.*",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "All\\Router\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordy",
+                    "email": "arno.zheng@gmail.com"
+                }
+            ],
+            "description": "PHP路由",
+            "time": "2019-12-16T11:16:41+00:00"
+        },
+        {
+            "name": "boxunphp/php-utils",
+            "version": "v1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/boxunphp/php-utils.git",
+                "reference": "e0b50d4fbb7767805f535fd334547c1fe2d3e611"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/boxunphp/php-utils/zipball/e0b50d4fbb7767805f535fd334547c1fe2d3e611",
+                "reference": "e0b50d4fbb7767805f535fd334547c1fe2d3e611",
                 "shasum": ""
             },
             "require": {
@@ -68,7 +110,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "All\\Utils\\": ""
+                    "All\\Utils\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -82,7 +124,7 @@
                 }
             ],
             "description": "PHP公共类和方法",
-            "time": "2019-12-11T03:35:36+00:00"
+            "time": "2019-12-17T06:37:52+00:00"
         },
         {
             "name": "boxunsoft/php-instance",
