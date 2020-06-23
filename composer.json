@@ -1,5 +1,5 @@
 {
-  "name": "boxunphp/php-request",
+  "name": "boxunphp/request",
   "description": "PHP请求类",
   "type": "library",
   "license": "MIT",
@@ -15,9 +15,8 @@
   },
   "require": {
     "php": "^7.2",
-    "boxunphp/php-instance": "dev-master",
-    "boxunphp/php-exception": "dev-master",
-    "boxunphp/php-router": "dev-master"
+    "symfony/http-foundation": "^5.1",
+    "boxunphp/instance": "^2.0"
   },
   "autoload": {
     "psr-4": {
