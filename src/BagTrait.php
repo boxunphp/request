@@ -35,7 +35,7 @@ trait BagTrait
      */
     public function post(): ParameterBag
     {
-        return $this->req->post;
+        return $this->req->request;
     }
 
     /**
