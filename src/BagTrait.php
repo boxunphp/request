@@ -23,7 +23,7 @@ trait BagTrait
      *
      * @return InputBag
      */
-    public function get(): InputBag
+    public function query(): InputBag
     {
         return $this->req->query;
     }
