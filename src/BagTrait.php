@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Boxunsoft package.
  *
@@ -10,81 +11,103 @@
 
 namespace All\Request;
 
-use Symfony\Component\HttpFoundation\FileBag;
-use Symfony\Component\HttpFoundation\HeaderBag;
-use Symfony\Component\HttpFoundation\InputBag;
-use Symfony\Component\HttpFoundation\ParameterBag;
-use Symfony\Component\HttpFoundation\ServerBag;
-
 trait BagTrait
 {
     /**
      * 操作$_GET
      *
-     * @return InputBag
+     * @return mixed
      */
-    public function query(): InputBag
+    public function query($key = null, $default = null)
     {
-        return $this->req->query;
+        if ($key) {
+            return $this->req->query->get($key, $default);
+        } else {
+            return $this->req->query->all();
+        }
     }
 
     /**
      * 操作$_POST
      *
-     * @return ParameterBag
+     * @return mixed
      */
-    public function post(): ParameterBag
+    public function post($key = null, $default = null)
     {
-        return $this->req->request;
+        if ($key) {
+            return $this->req->request->get($key, $default);
+        } else {
+            return $this->req->request->all();
+        }
     }
 
     /**
      * 操作$_SERVER
      *
-     * @return ServerBag
+     * @return mixed
      */
-    public function server(): ServerBag
+    public function server($key = null, $default = null)
     {
-        return $this->req->server;
+        if ($key) {
+            return $this->req->server->get($key, $default);
+        } else {
+            return $this->req->server->all();
+        }
     }
 
     /**
      * 操作$_COOKIE
      *
-     * @return InputBag
+     * @return mixed
      */
-    public function cookie(): InputBag
+    public function cookie($key = null, $default = null)
     {
-        return $this->req->cookies;
+        if ($key) {
+            return $this->req->cookies->get($key, $default);
+        } else {
+            return $this->req->cookies->all();
+        }
     }
 
     /**
      * 操作headers
      *
-     * @return HeaderBag
+     * @return mixed
      */
-    public function header(): HeaderBag
+    public function header($key = null, $default = null)
     {
-        return $this->req->headers;
+        if ($key) {
+            return $this->req->headers->get($key, $default);
+        } else {
+            return $this->req->headers->all();
+        }
     }
 
     /**
      * 操作$_FILES
      *
-     * @return FileBag
+     * @return mixed
      */
-    public function file(): FileBag
+    public function file($key = null, $default = null)
     {
-        return $this->req->files;
+        if ($key) {
+            return $this->req->files->get($key, $default);
+        } else {
+            return $this->req->files->all();
+        }
     }
 
     /**
      * 附加属性
      *
-     * @return ParameterBag
+     * @return mixed
      */
-    public function attribute(): ParameterBag
+    public function attribute($key = null, $default = null)
     {
-        return $this->req->attributes;
+        if ($key) {
+            return $this->req->attributes->get($key, $default);
+        } else {
+            return $this->req->attributes->all();
+        }
     }
 }
